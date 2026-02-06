@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>❤️ النهاية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family:'Cairo',sans-serif;
+  background: linear-gradient(135deg,#ffe6f1,#fceaff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+.container{
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:25px;
+  max-width:600px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+p{
+  font-size:20px;
+  line-height:1.8;
+  color:#333;
+  margin-bottom:20px;
+}
+a{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 25px;
+  background:#ff6f91;
+  color:white;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:18px;
+  transition:0.3s;
+}
+a:hover{
+  background:#ff4f7a;
+}
+/* القلوب المتحركة */
+.heart{
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  transform:rotate(-45deg);
+  animation:float 5s linear infinite;
+}
+.heart:before,.heart:after{
+  content:'';
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  border-radius:50%;
+}
+.heart:before{top:-10px;}
+.heart:after{left:10px;}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(-45deg);}
+  100%{transform:translateY(-100px) rotate(-45deg);}
+}
+#days{
+  font-size:22px;
+  color:#ff4f7a;
+  margin-bottom:15px;
+}
+video{
+  width:560px;
+  height:315px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <p id="days"></p>
+  <p>انا بجد مقدرش اتخيل خسارتك او انك تبعد عني كل سنة و انت معايا و يارب يجمعنا سوا طول العمر 💖</p>
+  
+  <!-- النص الجديد تحت الكلام -->
+  <p style="font-size:18px; color:#ff4f7a; margin-bottom:20px;">Happy Valentine’s Day ❤️</p>
+  
+  <!-- فيديو MP4 -->
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
+  
+  <br>
+  <a href="page2.html">رجوع ⬅️</a>
+</div>
+
+
+<script>
+// عداد الأيام من 27/9/2019
+let start = new Date("2019-09-27");
+let now = new Date();
+let diff = Math.floor((now - start)/(1000*60*60*24));
+document.getElementById("days").innerText = `لقد قضينا ${diff} يوم معًا ❤️`;
+
+// توليد القلوب المتحركة
+setInterval(()=>{
+  let h = document.createElement("div");
+  h.className="heart";
+  h.style.left = Math.random()*window.innerWidth + "px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+},300);
+</script>
+
+</body>
+</html>

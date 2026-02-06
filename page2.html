@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🎵 ذكرياتنا</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family:'Cairo',sans-serif;
+  background: linear-gradient(135deg,#ffe6f1,#fceaff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+.container{
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:25px;
+  max-width:500px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+p{
+  font-size:18px;
+  line-height:1.8;
+  color:#333;
+  margin-bottom:15px;
+}
+img{
+  width:100%;
+  border-radius:20px;
+  margin-bottom:15px;
+}
+a{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 25px;
+  background:#ff6f91;
+  color:white;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:18px;
+  transition:0.3s;
+}
+a:hover{
+  background:#ff4f7a;
+}
+
+/* القلوب المتحركة */
+.heart{
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  transform:rotate(-45deg);
+  animation:float 5s linear infinite;
+}
+.heart:before,.heart:after{
+  content:'';
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  border-radius:50%;
+}
+.heart:before{top:-10px;}
+.heart:after{left:10px;}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(-45deg);}
+  100%{transform:translateY(-100px) rotate(-45deg);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- الكلام فوق الصورة -->
+  <p>ذكرياتنا سوا متتعوضش 💖</p>
+  
+  <!-- الصورة -->
+  <img src="photo.jpg" alt="ذكرياتنا" 
+       style="width:100%; max-height:400px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
+  
+  <!-- الكلام فوق الفيديو -->
+  <p>دايمًا فبالي 🎵</p>
+  
+  <!-- فيديو يوتيوب -->
+  <iframe width="560" height="315"
+  src="https://www.youtube.com/embed/QHC-9PGT5ZQ"
+  title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+  
+  <!-- أزرار رجوع/التالي -->
+  <br><br>
+  <a href="page1.html">رجوع ⬅️</a>
+  <a href="page3.html" style="margin-left:10px;">التالي ➡️</a>
+</div>
+
+<style>
+/* اجعل الصفحة كلها scrollable لو المحتوى طويل */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+</style>
+
+<script>
+// توليد القلوب المتحركة
+setInterval(()=>{
+  let h = document.createElement("div");
+  h.className="heart";
+  h.style.left = Math.random()*window.innerWidth + "px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+},300);
+</script>
+
+</body>
+</html>

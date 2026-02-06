@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>❤️ رسالة حب</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family:'Cairo',sans-serif;
+  background: linear-gradient(135deg,#fceaff,#ffe6f1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+.container{
+  background:rgba(255,255,255,0.85);
+  padding:40px;
+  border-radius:25px;
+  max-width:450px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+h2{
+  color:#ff6f91;
+  margin-bottom:20px;
+  font-size:24px;
+}
+p{
+  color:#333;
+  font-size:18px;
+  line-height:2;
+}
+a{
+  display:inline-block;
+  margin:15px 10px;
+  padding:12px 25px;
+  background:#ff6f91;
+  color:white;
+  border-radius:15px;
+  text-decoration:none;
+  font-size:18px;
+  transition:0.3s;
+}
+a:hover{
+  background:#ff4f7a;
+}
+#daysCounter{
+  font-size:22px;
+  color:#ff4f7a;
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+/* القلوب المتحركة */
+.heart{
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  transform:rotate(-45deg);
+  animation:float 5s linear infinite;
+}
+.heart:before,.heart:after{
+  content:'';
+  position:absolute;
+  width:20px;height:20px;
+  background:red;
+  border-radius:50%;
+}
+.heart:before{top:-10px;}
+.heart:after{left:10px;}
+@keyframes float{
+  0%{transform:translateY(100vh) rotate(-45deg);}
+  100%{transform:translateY(-100px) rotate(-45deg);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>حبيبتي 💖</h2>
+
+  <div id="daysCounter"></div>
+
+  <p>
+حبيبتي عايز أقولك حقك عليا من أي حاجة حصلت السنة دي  
+والسنة اللي جاية هتبقى أحلى سنة لأننا مع بعض  
+ربنا يخليكي ليا وميحرمنيش منك  
+
+<br><br>
+إنت الشخص اللي كل يوم بحبه أكتر وأكتر  
+حد فاهمني من غير ما أتكلم  
+شايفني بعيوب وبمميزات  
+محدش غيرك قدر يشوفها  
+
+<br><br>
+بحبك
+ ❤️
+  </p>
+
+  <a href="page2.html">التالي ➡️</a>
+  <a href="index.html">رجوع ⬅️</a>
+</div>
+
+<script>
+// عداد الأيام من بداية العلاقة
+let start = new Date("2019-09-27");
+let now = new Date();
+let diff = Math.floor((now-start)/(1000*60*60*24));
+document.getElementById("daysCounter").innerText = "مع بعض بقالنا " + diff + " يوم 💖";
+
+// توليد القلوب المتحركة
+setInterval(()=>{
+  let h = document.createElement("div");
+  h.className="heart";
+  h.style.left = Math.random()*window.innerWidth + "px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+},300);
+</script>
+
+</body>
+</html>
